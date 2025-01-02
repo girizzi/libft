@@ -6,13 +6,20 @@
 /*   By: girizzi <girizzi@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/31 14:48:00 by girizzi           #+#    #+#             */
-/*   Updated: 2024/12/31 14:48:07 by girizzi          ###   ########.fr       */
+/*   Updated: 2025/01/02 18:17:58 by girizzi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	*ft_bzero(void *s, size_t n)
 {
-	ft_memset(s, 0, n);
+	size_t	i;
+
+	i = 0;
+	while (i < n)
+	{
+		((unsigned char *)s)[i++] = 0;
+	}
+	return (s);
 }

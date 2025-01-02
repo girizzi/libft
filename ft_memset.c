@@ -6,21 +6,20 @@
 /*   By: girizzi <girizzi@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/31 14:42:48 by girizzi           #+#    #+#             */
-/*   Updated: 2024/12/31 15:03:48 by girizzi          ###   ########.fr       */
+/*   Updated: 2025/01/02 21:15:54 by girizzi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*memset(void *dest, int c, size_t count)
+void	*ft_memset(void *dest, int c, size_t count)
 {
-	char	*buffer;
+	size_t	i;
 
-	buffer = (char *)dest;
-	while (len > 0)
+	i = 0;
+	while (i < count)
 	{
-		buffer[len - 1] = c;
-		len--;
+		((unsigned char *)dest)[i++] = (unsigned char)c;
 	}
 	return (dest);
 }

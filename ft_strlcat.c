@@ -6,34 +6,34 @@
 /*   By: girizzi <girizzi@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 15:07:00 by girizzi           #+#    #+#             */
-/*   Updated: 2024/12/31 17:00:36 by girizzi          ###   ########.fr       */
+/*   Updated: 2025/01/02 20:32:50 by girizzi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, char *src, unsigned int size)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	unsigned int	i;
-	unsigned int	dest_len;
-	unsigned int	src_len;
+	size_t	d;
+	size_t	s;
+	size_t	i;
+	size_t	j;
 
+	d = ft_strlen(dest);
+	s = ft_strlen(src);
 	i = 0;
-	dest_len = 0;
-	src_len = 0;
-	while (dest[dest_len] != 0)
-		dest_len++;
-	while (src[src_len] != 0)
-		src_len++;
-	while (size <= dest_len)
+	j = d;
+	if (d < size - 1 && size > 0)
 	{
-		return (size + src_len);
+		while (src[i] != '\0' && d + i < size - 1)
+		{
+			dest[j] = src[i];
+			j++;
+			i++;
+		}
+		dest[j] = 0;
 	}
-	while (src[i] != '\0' && dest_len + i < size - 1)
-	{
-		dest[dest_len + i] = src[i];
-		i++;
-	}
-	dest[dest_len + i] = '\0';
-	return (dest_len + src_len);
+	if (d >= size)
+		d = size;
+	return (d + s);
 }
