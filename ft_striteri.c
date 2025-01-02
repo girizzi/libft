@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: girizzi <girizzi@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/26 12:59:11 by girizzi           #+#    #+#             */
-/*   Updated: 2024/12/29 17:17:30 by girizzi          ###   ########.fr       */
+/*   Created: 2024/12/30 18:20:15 by girizzi           #+#    #+#             */
+/*   Updated: 2024/12/30 18:27:51 by girizzi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int i)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	if ((i >= 'a' && i <= 'z') || (i >= 'A' && i <= 'Z')
-		|| (i >= '0' && i <= '9'))
-		return (1);
-	return (0);
+	unsigned int	i;
+
+	if (s == NULL || f == NULL)
+		return ;
+	i = 0;
+	while (s[i])
+	{
+		f(i, &s[i]);
+		i++;
+	}
 }
-/*
-int	main(void)
-{
-	printf("%d\n", ft_isalnum('4'));
-	printf("%d\n", ft_isalnum('H'));
-	printf("%d\n", ft_isalnum('a'));
-	printf("%d\n", ft_isalnum(69));
-	printf("%d\n", ft_isalnum(34));
-	printf("%d\n", ft_isalnum(160));
-}
-*/

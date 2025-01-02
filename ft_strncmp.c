@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: girizzi <girizzi@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/26 12:59:11 by girizzi           #+#    #+#             */
-/*   Updated: 2024/12/29 17:17:30 by girizzi          ###   ########.fr       */
+/*   Created: 2024/12/30 19:46:39 by girizzi           #+#    #+#             */
+/*   Updated: 2024/12/30 19:48:49 by girizzi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int i)
+int	ft_strncmp(const char *s1, const char *s2, unsigned int n)
 {
-	if ((i >= 'a' && i <= 'z') || (i >= 'A' && i <= 'Z')
-		|| (i >= '0' && i <= '9'))
-		return (1);
+	unsigned char	*ptr1;
+	unsigned char	*ptr2;
+
+	ptr1 = (unsigned char *)s1;
+	ptr2 = (unsigned char *)s2;
+	while (n > 0 && *ptr1 && *ptr2)
+	{
+		if (*ptr1 != *ptr2)
+			return (*ptr1 - *ptr2);
+		ptr1++;
+		ptr2++;
+		n--;
+	}
+	if (n > 0)
+		return (*ptr1 - *ptr2);
 	return (0);
 }
-/*
-int	main(void)
-{
-	printf("%d\n", ft_isalnum('4'));
-	printf("%d\n", ft_isalnum('H'));
-	printf("%d\n", ft_isalnum('a'));
-	printf("%d\n", ft_isalnum(69));
-	printf("%d\n", ft_isalnum(34));
-	printf("%d\n", ft_isalnum(160));
-}
-*/

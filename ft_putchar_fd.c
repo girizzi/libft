@@ -1,32 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: girizzi <girizzi@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/26 12:59:11 by girizzi           #+#    #+#             */
-/*   Updated: 2024/12/29 17:17:30 by girizzi          ###   ########.fr       */
+/*   Created: 2024/12/30 17:27:38 by girizzi           #+#    #+#             */
+/*   Updated: 2024/12/30 18:09:25 by girizzi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int i)
+void	ft_putchar_fd(char c, int fd)
 {
-	if ((i >= 'a' && i <= 'z') || (i >= 'A' && i <= 'Z')
-		|| (i >= '0' && i <= '9'))
-		return (1);
-	return (0);
+	write(fd, &c, 1);
 }
-/*
-int	main(void)
-{
-	printf("%d\n", ft_isalnum('4'));
-	printf("%d\n", ft_isalnum('H'));
-	printf("%d\n", ft_isalnum('a'));
-	printf("%d\n", ft_isalnum(69));
-	printf("%d\n", ft_isalnum(34));
-	printf("%d\n", ft_isalnum(160));
-}
-*/

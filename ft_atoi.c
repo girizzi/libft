@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: girizzi <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: girizzi <girizzi@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 16:31:43 by girizzi           #+#    #+#             */
-/*   Updated: 2024/12/26 16:32:12 by girizzi          ###   ########.fr       */
+/*   Updated: 2024/12/29 17:04:33 by girizzi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,3 +36,12 @@ int	ft_atoi(char *str)
 	}
 	return (result * sign);
 }
+/*
+int	main(void)
+{
+	printf("%d\n", ft_atoi("-42ab567"));
+	printf("%d\n", ft_atoi("a42"));
+	printf("%d\n", ft_atoi("-042e00"));
+	printf("%d\n", ft_atoi("4242%33"));
+}
+*/
