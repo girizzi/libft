@@ -6,7 +6,7 @@
 /*   By: girizzi <girizzi@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 12:59:11 by girizzi           #+#    #+#             */
-/*   Updated: 2024/12/29 17:17:30 by girizzi          ###   ########.fr       */
+/*   Updated: 2025/01/03 20:00:58 by girizzi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,3 @@ int	ft_isalnum(int i)
 		return (1);
 	return (0);
 }
-/*
-int	main(void)
-{
-	printf("%d\n", ft_isalnum('4'));
-	printf("%d\n", ft_isalnum('H'));
-	printf("%d\n", ft_isalnum('a'));
-	printf("%d\n", ft_isalnum(69));
-	printf("%d\n", ft_isalnum(34));
-	printf("%d\n", ft_isalnum(160));
-}
-*/

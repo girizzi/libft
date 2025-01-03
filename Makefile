@@ -33,7 +33,15 @@ FILES = ft_atoi.c \
 	ft_tolower.c \
 	ft_toupper.c \
 
-FILES_B = 
+FILES_B = ft_lstnew.c \
+		  ft_lstadd_front.c \
+		  ft_lstsize.c \
+		  ft_lstlast.c \
+		  ft_lstiter.c \
+		  ft_lstdelone.c \
+		  ft_lstclear.c \
+		  ft_lstmap.c \
+		  ft_lstadd_back.c \
 
 NAME = libft.a
 CC = gcc

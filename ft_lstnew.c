@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: girizzi <girizzi@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/26 16:31:43 by girizzi           #+#    #+#             */
-/*   Updated: 2025/01/03 20:00:44 by girizzi          ###   ########.fr       */
+/*   Created: 2025/01/03 20:06:28 by girizzi           #+#    #+#             */
+/*   Updated: 2025/01/03 21:01:39 by girizzi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+t_list	*ft_lstnew(void *content)
 {
-	int	i;
-	int	n;
-	int	nminus;
+	t_list	*new_node;
 
-	i = 0;
-	n = 0;
-	nminus = 1;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ')
-		i++;
-	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-			nminus *= -1;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-		n = n * 10 + (str[i++] - '0');
-	return (n * nminus);
+	new_node = (t_list *)malloc(sizeof(t_list));
+	if (!new_node)
+		return (NULL);
+	new_node->content = content;
+	new_node->next = NULL;
+	return (new_node);
 }
